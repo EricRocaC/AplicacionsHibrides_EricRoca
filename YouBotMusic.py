@@ -8,7 +8,7 @@ def send_welcome(message):
 
 @YouBotMusic.message_handler(commands=['Help', 'help'])
 def help(message):
-	YouBotMusic.reply_to(message, "Comands: /Start /JoJo /Eminem")
+	YouBotMusic.reply_to(message, "Comands: /Start /JoJo /Eminem /Metallica")
 
 @YouBotMusic.message_handler(commands=['JoJo', 'Jojo', 'jojo'])
 def music(message):
@@ -22,7 +22,18 @@ def music(message):
 	YouBotMusic.reply_to(message, random.choice(musicList))
 	print(message)
 
+@YouBotMusic.message_handler(commands=['Metallica', 'metallica'])
+def music(message):
+	musicList=["https://www.youtube.com/watch?v=Ckom3gf57Yw", "https://www.youtube.com/watch?v=IfRY3SsozuM"]
+	YouBotMusic.reply_to(message, random.choice(musicList))
+	print(message)
+
 	#id: 863816876
+
+	#Probes:
+
+	#class telegram.Audio(random.choice(musicList)):
+	#YouBotMusic.reply_to(message, telegram.Audio)
 
 	#Message msg = await botClient.SendVideoAsync(
   	#	chatId: e.Message.Chat,
